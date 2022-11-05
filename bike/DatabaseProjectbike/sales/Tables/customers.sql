@@ -19,3 +19,24 @@ CREATE NONCLUSTERED INDEX [ix_customers_name]
     ON [sales].[customers]([last_name] ASC, [first_name] ASC);
 GO
 
+
+CREATE UNIQUE NONCLUSTERED INDEX [ix_cust_email]
+    ON [sales].[customers]([email] ASC);
+GO
+
+
+CREATE UNIQUE NONCLUSTERED INDEX [ix_cust_email_inc]
+    ON [sales].[customers]([email] ASC)
+    INCLUDE([first_name], [last_name]);
+GO
+
+
+CREATE NONCLUSTERED INDEX [ix_cust_phone]
+    ON [sales].[customers]([phone] ASC) WHERE ([phone] IS NOT NULL);
+GO
+
+
+CREATE NONCLUSTERED INDEX [ix_customers_city]
+    ON [sales].[customers]([city] ASC);
+GO
+

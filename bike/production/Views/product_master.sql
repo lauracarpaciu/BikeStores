@@ -1,4 +1,4 @@
-CREATE VIEW product_master
+CREATE VIEW [production].[product_master]
 WITH SCHEMABINDING
 AS 
 SELECT
