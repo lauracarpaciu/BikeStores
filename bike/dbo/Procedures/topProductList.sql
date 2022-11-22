@@ -1,10 +1,10 @@
 
-CREATE PROCEDURE topProductList
+CREATE PROCEDURE [dbo].[topProductList]
 AS
 BEGIN
     DECLARE @name VARCHAR(MAX);
 
-    SELECT TOP 1
+    SELECT TOP 100
         @name = product_name
     FROM
         production.products
